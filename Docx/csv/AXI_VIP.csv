@@ -1,0 +1,7 @@
+Test Case ID,Test Scenario,Test Description,Expected Result,Interface Type (Internal/External),External Interface / Signal Names
+TC_AXI_VIP_RST_01,AXI Reset & Handshake Inactivity,"Assert reset (rst_n=0). Verify awready, wready, bvalid, arready, rvalid are deasserted or in reset state.",Interface resets cleanly; no spurious transfers triggered during reset.,Internal,None (AXI System Bus)
+TC_AXI_VIP_FUNC_01,Single 32-bit Write Transfer,"Master issues single write transfer with awaddr=0x40001000, wdata=0x12345678, wstrb=4'hF.",awready and wready assert; transaction accepted; bresp returns OKAY (2'b00).,Internal,awaddr wdata bresp
+TC_AXI_VIP_FUNC_02,Single 32-bit Read Transfer,"Master issues single read transfer with araddr=0x40001000, arprot=3'b000.",arready asserts; rdata returns valid data payload; rresp returns OKAY (2'b00).,Internal,araddr rdata rresp
+TC_AXI_VIP_FUNC_03,Back-to-Back Write and Read Verification,Perform back-to-back write followed by read to adjacent addresses.,Both transactions complete without bus stall; protocol handshakes adhere to AXI spec.,Internal,awaddr araddr
+TC_AXI_VIP_FUNC_04,Byte-Strobe Masked Write Transfer,Perform write with byte strobe wstrb=4'b0001 to address 0x40002000.,Target byte lane accepted; remaining lanes masked; bresp returns OKAY.,Internal,wdata wstrb
+TC_AXI_VIP_ERR_01,AXI Error Response Handling (SLVERR/DECERR),Issue transfer to unmapped address range to verify slave error response handling.,Target slave returns non-OKAY response (SLVERR/DECERR); bus does not deadlock.,Internal,bresp rresp

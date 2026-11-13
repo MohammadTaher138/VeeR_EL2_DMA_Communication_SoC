@@ -1,0 +1,7 @@
+signal_name,direction,width
+clk,input,1
+rst_n,input,1
+uart_tx_o,output,1
+uart_rx_i,input,1
+uart_rts_o,output,1
+uart_cts_i,input,1

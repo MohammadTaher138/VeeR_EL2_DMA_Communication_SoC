@@ -1,0 +1,13 @@
+signal_name,direction,width
+clk_i,input,1
+rst_n_i,input,1
+spi_clk_o,output,1
+spi_cs_n_o,output,1
+spi_mosi_o,output,1
+spi_miso_i,input,1
+uart_tx_o,output,1
+uart_rx_i,input,1
+uart_rts_o,output,1
+uart_cts_i,input,1
+i2c_scl,inout,1
+i2c_sda,inout,1

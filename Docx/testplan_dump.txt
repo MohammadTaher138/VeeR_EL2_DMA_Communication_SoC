@@ -1,0 +1,180 @@
+=== [1] TC_BOOT_01 (Internal | N/A) ===
+  Description: Power-on Reset & Boot Entry Check: Verify reset release and execution of the first instruction by the VeeR EL2 core from the configured boot/ICCM entry address.
+  Checkpoint:  Core leaves reset, fetches a valid instruction, and begins firmware execution; peripheral control/status registers start in reset state.
+  C part:      Run the startup firmware and signal boot progress through the UART status message. Confirm the firmware reaches its first initialization milestone.
+  SV part:     Assert reset for the specified number of clock cycles, release it, and monitor VeeR EL2 instruction trace signals. Check reset values and that internal bus interfaces remain inactive during reset.
+
+=== [2] TC_MEM_01 (Internal | N/A) ===
+  Description: ICCM Instruction Fetch Integrity: Verify instruction fetches from ICCM during boot and normal firmware execution.
+  Checkpoint:  Core fetches valid instructions from ICCM without unexpected access faults or exceptions.
+  C part:      Execute a small firmware routine located in ICCM and report successful completion over UART.
+  SV part:     Monitor IFU/ICCM request, address, response and error signals; check expected fetch sequence and absence of unexpected exceptions.
+
+=== [3] TC_MEM_02 (Internal | N/A) ===
+  Description: DCCM Read/Write & Buffer Integrity: Verify CPU byte/half-word/word accesses and source/destination buffer storage in DCCM.
+  Checkpoint:  Written data is read back correctly and no unexpected ECC or access error is reported.
+  C part:      Write and read test patterns in DCCM, including the buffers reserved for SPI and I2C DMA transfers.
+  SV part:     Monitor LSU/DCCM transactions and ECC/error indications, where exposed by the VeeR EL2 integration. Compare returned data with the reference pattern.
+
+=== [4] TC_AHB_01 (Internal | N/A) ===
+  Description: AHB-Lite Peripheral Register Access: Verify CPU LSU accesses to memory-mapped SPI, I2C, DMA and UART control/status registers through the AHB-Lite interconnect.
+  Checkpoint:  Valid reads and writes reach the selected peripheral and return the expected response/data.
+  C part:      Firmware writes configuration values to each peripheral register and reads them back using the documented register map.
+  SV part:     Monitor AHB-Lite address, control, write-data, ready and response signals. Check transfer completion, selected slave and read/write data.
+
+=== [5] TC_AHB_02 (Internal | N/A) ===
+  Description: AHB-Lite Address Decode & Isolation: Verify address decoding for all mapped peripherals and isolation between peripheral register spaces.
+  Checkpoint:  Each address selects only its intended peripheral; accesses to unmapped addresses return the designed error response without hanging the bus.
+  C part:      Access representative registers in SPI, I2C, DMA and UART address regions; perform an access to an unmapped address if the system defines an error response.
+  SV part:     Monitor HADDR/HSEL/HREADY/HRESP and peripheral select signals. Check correct decode, no unintended register write and bounded response time.
+
+=== [6] TC_SPI_01 (Internal | N/A) ===
+  Description: SPI Controller Configuration & Register Readback: Verify SPI control, clock-divider, chip-select and status configuration through the memory-mapped interface.
+  Checkpoint:  SPI configuration registers retain legal programmed values and the controller reaches the enabled/idle state.
+  C part:      Configure the SPI controller using the implemented register map, then read back the programmed settings.
+  SV part:     Monitor AHB-Lite register transactions and SPI controller control/status signals. Check register readback and state transitions.
+
+=== [7] TC_SPI_02 (External | SPI – SCLK, MOSI, CS_n) ===
+  Description: SPI Master Transmit: Verify serial transmission of a known data pattern to an external SPI-compatible device/model.
+  Checkpoint:  SCLK, chip-select and MOSI follow the configured SPI timing; the transmitted bit sequence matches the programmed data.
+  C part:      Configure SPI and write a known byte/word to the transmit FIFO/data register; wait for transfer completion/status.
+  SV part:     Use an SPI slave BFM to monitor CS, SCLK and MOSI; sample according to configured clock polarity/phase and compare the captured data.
+
+=== [8] TC_SPI_03 (External | SPI – SCLK, MISO, CS_n) ===
+  Description: SPI Master Receive: Verify reception of known data from an external SPI-compatible device/model.
+  Checkpoint:  Received data is captured in the SPI receive FIFO/data register and can be read correctly by the CPU.
+  C part:      Configure an SPI read/receive operation and read the received data after the controller indicates availability/completion.
+  SV part:     Drive a known serial data pattern on MISO with the SPI BFM. Check sampling edges, received word, FIFO/status update and receive interrupt if enabled.
+
+=== [9] TC_SPI_04 (External | SPI – SCLK, MOSI, MISO, CS_n) ===
+  Description: SPI Clock Mode & Divider Timing: Verify SPI clock polarity/phase modes and programmed clock-divider behavior, for the modes supported by the implementation.
+  Checkpoint:  SCLK idle level, data launch/sample edges and clock period match the selected configuration.
+  C part:      Run transfers with each supported CPOL/CPHA setting and selected divider values; verify returned data in firmware.
+  SV part:     Measure SCLK idle polarity and period; check MOSI/MISO transitions and sampling edges against the configured mode.
+
+=== [10] TC_SPI_05 (Internal | N/A) ===
+  Description: SPI FIFO Status & Interrupt: Verify SPI FIFO/status indications and interrupt behavior for the implemented threshold/completion events.
+  Checkpoint:  FIFO flags and SPI interrupt request assert and clear under the documented conditions.
+  C part:      Enable relevant SPI interrupt sources, perform transmit/receive activity, service the status in firmware and clear it as specified.
+  SV part:     Monitor FIFO levels/flags and SPI interrupt request; verify event timing, PIC input assertion and clearing behavior.
+
+=== [11] TC_I2C_01 (Internal | N/A) ===
+  Description: I2C Controller Configuration & Register Readback: Verify I2C enable, clock timing, target address and control/status register programming.
+  Checkpoint:  Legal configuration values are retained and the controller reaches the expected idle/enabled state.
+  C part:      Program I2C controller configuration using the implemented register map and read back the settings.
+  SV part:     Monitor AHB-Lite register transactions and I2C control/status signals for correct programming and state transitions.
+
+=== [12] TC_I2C_02 (External | I2C – SCL, SDA) ===
+  Description: I2C START, Address & Write Transfer: Verify an I2C write transaction including START, 7-bit address, write bit, ACK and data transfer.
+  Checkpoint:  SCL/SDA sequence is protocol-correct and the addressed slave acknowledges the address and data bytes.
+  C part:      Configure the target address and write direction, transmit a known data byte/sequence and check completion status.
+  SV part:     Use an I2C slave BFM to observe START, address, R/W=0, ACK and data phases; compare transmitted bytes and timing.
+
+=== [13] TC_I2C_03 (External | I2C – SCL, SDA) ===
+  Description: I2C Read Transfer & Master NACK/STOP: Verify an I2C read transaction and correct termination using master NACK and STOP, as supported by the controller.
+  Checkpoint:  Received bytes match the slave-driven pattern and the transaction terminates with the expected NACK/STOP sequence.
+  C part:      Configure a read from the test slave, read the received data/status and confirm transaction completion.
+  SV part:     Drive data and ACK phases from the I2C BFM; monitor master ACK/NACK, final STOP, SCL/SDA timing and received data.
+
+=== [14] TC_I2C_04 (External | I2C – SCL, SDA) ===
+  Description: I2C Slave NACK/Error Handling: Verify controller behavior when the addressed slave does not acknowledge, if NACK reporting is implemented.
+  Checkpoint:  NACK/error status is reported and the controller exits or terminates the transaction as specified without deadlock.
+  C part:      Issue a transfer to a test address configured to NACK; poll status and execute the documented error-clear/recovery sequence.
+  SV part:     Make the I2C BFM withhold ACK at the address or data phase. Check NACK detection, status/interrupt and bus/controller recovery.
+
+=== [15] TC_I2C_05 (Internal | N/A) ===
+  Description: I2C Interrupt & Status Handling: Verify I2C transfer-complete and error/status interrupt events implemented by the controller.
+  Checkpoint:  Correct I2C event reaches the PIC and is cleared using the documented status mechanism.
+  C part:      Enable I2C interrupt sources, perform a transaction, service the interrupt and clear the pending status.
+  SV part:     Monitor I2C interrupt output, corresponding PIC source and status-clear behavior.
+
+=== [16] TC_DMA_01 (Internal | N/A) ===
+  Description: DMA Descriptor Configuration & Readback: Verify CPU programming of DMA source, destination, transfer length, peripheral selection and direction fields.
+  Checkpoint:  DMA descriptor/control registers accept legal values and start only when correctly enabled.
+  C part:      Program descriptors for DCCM-to-SPI, SPI-to-DCCM, DCCM-to-I2C and I2C-to-DCCM directions using the implemented register map.
+  SV part:     Monitor AHB-Lite writes/reads to DMA registers and verify captured descriptor fields and start handshake.
+
+=== [17] TC_DMA_02 (External | SPI – SCLK, MISO, CS_n) ===
+  Description: SPI Receive to DCCM DMA Transfer: Verify autonomous DMA movement of received SPI data from the SPI FIFO to a DCCM buffer.
+  Checkpoint:  DCCM destination buffer matches the externally supplied SPI data; DMA reports completion and raises the configured interrupt.
+  C part:      Initialize a DCCM destination buffer, configure SPI receive and DMA descriptor, start the transfer, wait for completion, then compare buffer contents.
+  SV part:     Drive known data through the SPI BFM. Monitor SPI FIFO reads and DMA-port DCCM writes; check address, length, data and completion interrupt.
+
+=== [18] TC_DMA_03 (External | SPI – SCLK, MOSI, CS_n) ===
+  Description: DCCM to SPI Transmit DMA Transfer: Verify autonomous DMA movement of transmit data from DCCM to the SPI FIFO.
+  Checkpoint:  External SPI device/model receives the same data stored in the DCCM source buffer; DMA completes successfully.
+  C part:      Fill a DCCM source buffer, configure SPI transmit and DMA descriptor, start transfer and report completion through UART.
+  SV part:     Monitor DMA-port DCCM reads and SPI FIFO writes; use SPI BFM to compare serial output against the source buffer.
+
+=== [19] TC_DMA_04 (External | I2C – SCL, SDA) ===
+  Description: I2C Receive to DCCM DMA Transfer: Verify autonomous DMA movement of received I2C data from the I2C data register/FIFO to DCCM.
+  Checkpoint:  DCCM destination buffer matches the bytes supplied by the I2C slave model and DMA reports completion.
+  C part:      Configure I2C read and DMA destination descriptor, start the transfer and compare the received DCCM buffer after completion.
+  SV part:     Drive known bytes from I2C BFM; monitor I2C receive data/FIFO handshake and aligned DMA-port writes to DCCM.
+
+=== [20] TC_DMA_05 (External | I2C – SCL, SDA) ===
+  Description: DCCM to I2C Transmit DMA Transfer: Verify autonomous DMA movement of transmit data from DCCM to the I2C data register/FIFO.
+  Checkpoint:  I2C slave model receives the bytes stored in the DCCM source buffer and DMA completes successfully.
+  C part:      Initialize DCCM source data, configure I2C write and DMA descriptor, start transfer and check completion/status.
+  SV part:     Monitor DMA-port DCCM reads and I2C transmit data handshakes; compare the BFM-captured I2C bytes with source data.
+
+=== [21] TC_DMA_06 (Internal | N/A) ===
+  Description: DMA DCCM Access Alignment & Transfer Size: Verify DMA accesses to VeeR EL2 DCCM obey the required 32-bit or 64-bit alignment and access-size rules.
+  Checkpoint:  DMA issues only supported aligned, sized DCCM writes; no unsupported partial write is generated.
+  C part:      Use legal aligned DCCM buffer addresses and lengths/transfer configurations supported by the DMA implementation.
+  SV part:     Monitor the VeeR EL2 DMA slave port address, size and write strobes. Assert 32/64-bit alignment and legal access size for writes.
+
+=== [22] TC_DMA_07 (Internal | N/A) ===
+  Description: DMA Arbitration with Concurrent CPU DCCM Access: Verify DMA access behavior when the CPU and DMA access DCCM concurrently, including the core-priority rule described in the project abstract.
+  Checkpoint:  CPU accesses retain the specified priority and DMA completes correctly after any permitted wait; no data corruption or deadlock occurs.
+  C part:      Start a DMA transfer while firmware performs DCCM reads/writes to a separate buffer; read the DMA buffer only after completion interrupt.
+  SV part:     Apply concurrent CPU and DMA requests. Check arbitration, wait/blocked-access behavior, the configured mfdc.dqc behavior where applicable, and final data integrity.
+
+=== [23] TC_DMA_08 (Internal | N/A) ===
+  Description: DMA Completion, Error & Interrupt: Verify DMA completion and bus-error reporting through status registers and the PIC.
+  Checkpoint:  Successful transfers set completion status; an invalid/faulting access reports an error; the corresponding interrupt reaches the core.
+  C part:      Run one valid transfer and one controlled error case supported by the bus design; service and clear DMA status/interrupts.
+  SV part:     Monitor DMA state, completion/error outputs, bus response and PIC source. Check no bus hang and correct return to idle/error state.
+
+=== [24] TC_PIC_01 (Internal | N/A) ===
+  Description: PIC Interrupt Routing & Core Service: Verify DMA, SPI and I2C interrupt sources are routed through the built-in PIC to the VeeR EL2 core.
+  Checkpoint:  Enabled interrupt source is presented to the core and the firmware identifies and services the correct source.
+  C part:      Enable the relevant PIC sources, trigger DMA completion and SPI/I2C events, service each interrupt and clear its source.
+  SV part:     Assert each source independently and in selected combinations; monitor PIC pending/enable/priority and core interrupt/trap behavior.
+
+=== [25] TC_UART_01 (External | UART – TX) ===
+  Description: UART Host Status Transmission: Verify UART transmits transfer status/results to a host computer or UART receiver model.
+  Checkpoint:  UART TX produces correctly framed data at the configured baud rate.
+  C part:      Initialize UART and send boot, transfer-complete and error status messages; check firmware formatting/content.
+  SV part:     UART BFM samples uart_tx at the configured baud rate and checks start bit, data bits, optional parity and stop bit as configured.
+
+=== [26] TC_UART_02 (External | UART – RX) ===
+  Description: UART Host Command/Data Reception: Verify UART receives host-provided data or commands if RX is used by the application.
+  Checkpoint:  Received UART data is captured correctly and available to firmware through the documented interface.
+  C part:      Inject a known command/data sequence through UART RX and verify firmware reads and interprets it.
+  SV part:     Drive uart_rx with a correctly timed serial frame; monitor receive status/data and interrupt behavior.
+
+=== [27] TC_SYS_01 (Internal | N/A) ===
+  Description: Concurrent CPU Execution During DMA: Verify the CPU can continue executing application code while DMA transfers SPI/I2C data to or from DCCM.
+  Checkpoint:  DMA data remains correct while the core performs independent work; completion is reported only after the transfer finishes.
+  C part:      Start a block transfer and execute a separate computation/status loop; read the DMA buffer only after completion notification.
+  SV part:     Monitor CPU instruction progress, DMA requests, DCCM accesses and completion interrupt during overlapping operation.
+
+=== [28] TC_SYS_02 (External | SPI – SCLK, MOSI, MISO, CS_n) ===
+  Description: End-to-End SPI DMA Communication: Verify the complete CPU configuration, SPI external transfer, DMA-to/from-DCCM movement and PIC completion path.
+  Checkpoint:  SPI payload is transferred correctly between the external device model and DCCM, with completion reported to the core and status available over UART.
+  C part:      Initialize buffers and PIC, configure SPI and DMA, execute receive and transmit tests, compare data and print the result over UART.
+  SV part:     Run SPI BFM and SoC testbench together; scoreboard compares external payload, DCCM contents, DMA status and PIC interrupt.
+
+=== [29] TC_SYS_03 (External | I2C – SCL, SDA) ===
+  Description: End-to-End I2C DMA Communication: Verify the complete CPU configuration, I2C external transaction, DMA-to/from-DCCM movement and PIC completion path.
+  Checkpoint:  I2C payload is transferred correctly between the external slave model and DCCM, with completion reported to the core and status available over UART.
+  C part:      Initialize buffers and PIC, configure I2C and DMA, execute read/write tests, compare data and print the result over UART.
+  SV part:     Run I2C BFM and SoC testbench together; scoreboard checks protocol phases, payload, DCCM contents, DMA status and PIC interrupt.
+
+=== [30] TC_SYS_04 (External | SPI – SCLK/MOSI/MISO/CS_n; I2C – SCL/SDA; UART – TX/RX) ===
+  Description: Full SoC Regression & Firmware Completion: Run the integrated firmware verification sequence across boot, memory, AHB-Lite, SPI, I2C, DMA, PIC and UART.
+  Checkpoint:  All enabled test cases pass, no unexpected exception/deadlock occurs, and the firmware reports final success through UART.
+  C part:      Execute the complete test sequence and print a final PASS/FAIL summary through UART.
+  SV part:     Run the complete RTL regression with protocol BFMs, bus monitors, DMA/DCCM checks and interrupt scoreboard; fail on timeout or any mismatch.
+

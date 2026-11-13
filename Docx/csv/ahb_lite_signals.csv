@@ -1,0 +1,13 @@
+signal_name,direction,width
+clk,input,1
+rst_n,input,1
+sys_haddr,input,32
+sys_hwdata,input,64
+sys_hrdata,output,64
+sys_hwrite,input,1
+sys_htrans,input,2
+sys_hsize,input,3
+sys_hburst,input,3
+sys_hprot,input,4
+sys_hready,output,1
+sys_hresp,output,1

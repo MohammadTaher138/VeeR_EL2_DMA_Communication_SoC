@@ -1,0 +1,7 @@
+signal_name,direction,width
+clk,input,1
+rst_n,input,1
+spi_clk_o,output,1
+spi_cs_n_o,output,1
+spi_mosi_o,output,1
+spi_miso_i,input,1
