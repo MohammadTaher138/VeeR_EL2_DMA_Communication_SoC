@@ -1,0 +1,42 @@
+# ==============================================================================
+# VeeR EL2 Communication SoC - Git Ignore Rules
+# ==============================================================================
+
+# VCS & Verdi Simulation Artifacts
+simv
+simv.*
+simv.daidir/
+simv.vdb/
+csrc/
+*.fsdb
+*.vpd
+*.vcd
+*.vdb/
+ucli.key
+vc_hdrs.h
+novas.*
+verdiLog/
+verdi_config_file
+
+# Temporary and Lock Files
+*~
+*.swp
+*.swo
+.~lock.*
+.DS_Store
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# External Toolchain Subtree (should be cloned separately as prerequisite)
+riscv-gnu-toolchain/
+
+# Backup directories
+overall_uvm_backup/
+Testbench/overall_uvm_backup/
+
+# Build logs and temporary simulation outputs (keep committed gold evidence logs)
+Run/novas_dump.log
+Run/vcs_compile.log
