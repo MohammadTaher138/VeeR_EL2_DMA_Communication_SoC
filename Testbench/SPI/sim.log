@@ -1,0 +1,71 @@
+Command: /home/student/Documents/Taher_152/Soc_Project/Testbench/SPI/./simv +UVM_VERBOSITY=UVM_MEDIUM -l sim.log
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version U-2023.03_Full64; Runtime version U-2023.03_Full64;  Nov  7 11:50 2026
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test spi_test...
+UVM_INFO spi_test.sv(17) @ 0: uvm_test_top [spi_test] =========================================================
+UVM_INFO spi_test.sv(18) @ 0: uvm_test_top [spi_test] === Starting SPI UVM Verification Simulation ===
+UVM_INFO spi_test.sv(19) @ 0: uvm_test_top [spi_test] =========================================================
+UVM_INFO spi_test.sv(20) @ 0: uvm_test_top [spi_test] Testplan coverage: 22 documented scenarios from CSV
+UVM_INFO spi_sequence.sv(25) @ 0: uvm_test_top.env.agent.seqr@@seq [spi_random_seq] Executing SPI random sequence (6 items)
+UVM_INFO spi_scoreboard.sv(13) @ 5000: uvm_test_top.env.sb [spi_scoreboard] Scoreboard captured item #1: [SPI_ITEM] spi_clk_o=0x0, spi_cs_n_o=0x0, spi_mosi_o=0x0, spi_miso_i=0x0
+UVM_INFO spi_scoreboard.sv(13) @ 15000: uvm_test_top.env.sb [spi_scoreboard] Scoreboard captured item #2: [SPI_ITEM] spi_clk_o=0x0, spi_cs_n_o=0x0, spi_mosi_o=0x0, spi_miso_i=0x0
+UVM_INFO spi_scoreboard.sv(13) @ 25000: uvm_test_top.env.sb [spi_scoreboard] Scoreboard captured item #3: [SPI_ITEM] spi_clk_o=0x0, spi_cs_n_o=0x0, spi_mosi_o=0x0, spi_miso_i=0x0
+UVM_INFO spi_scoreboard.sv(13) @ 35000: uvm_test_top.env.sb [spi_scoreboard] Scoreboard captured item #4: [SPI_ITEM] spi_clk_o=0x0, spi_cs_n_o=0x0, spi_mosi_o=0x0, spi_miso_i=0x0
+UVM_INFO spi_scoreboard.sv(13) @ 45000: uvm_test_top.env.sb [spi_scoreboard] Scoreboard captured item #5: [SPI_ITEM] spi_clk_o=0x0, spi_cs_n_o=0x0, spi_mosi_o=0x0, spi_miso_i=0x0
+UVM_INFO spi_scoreboard.sv(13) @ 55000: uvm_test_top.env.sb [spi_scoreboard] Scoreboard captured item #6: [SPI_ITEM] spi_clk_o=0x0, spi_cs_n_o=0x0, spi_mosi_o=0x0, spi_miso_i=0x0
+UVM_INFO spi_scoreboard.sv(13) @ 65000: uvm_test_top.env.sb [spi_scoreboard] Scoreboard captured item #7: [SPI_ITEM] spi_clk_o=0x0, spi_cs_n_o=0x0, spi_mosi_o=0x0, spi_miso_i=0x0
+UVM_INFO spi_scoreboard.sv(13) @ 75000: uvm_test_top.env.sb [spi_scoreboard] Scoreboard captured item #8: [SPI_ITEM] spi_clk_o=0x0, spi_cs_n_o=0x0, spi_mosi_o=0x0, spi_miso_i=0x0
+UVM_INFO spi_scoreboard.sv(13) @ 85000: uvm_test_top.env.sb [spi_scoreboard] Scoreboard captured item #9: [SPI_ITEM] spi_clk_o=0x0, spi_cs_n_o=0x0, spi_mosi_o=0x0, spi_miso_i=0x0
+UVM_INFO spi_scoreboard.sv(13) @ 95000: uvm_test_top.env.sb [spi_scoreboard] Scoreboard captured item #10: [SPI_ITEM] spi_clk_o=0x0, spi_cs_n_o=0x0, spi_mosi_o=0x0, spi_miso_i=0x0
+UVM_INFO spi_scoreboard.sv(13) @ 105000: uvm_test_top.env.sb [spi_scoreboard] Scoreboard captured item #11: [SPI_ITEM] spi_clk_o=0x0, spi_cs_n_o=0x0, spi_mosi_o=0x0, spi_miso_i=0x0
+UVM_INFO spi_scoreboard.sv(13) @ 115000: uvm_test_top.env.sb [spi_scoreboard] Scoreboard captured item #12: [SPI_ITEM] spi_clk_o=0x0, spi_cs_n_o=0x0, spi_mosi_o=0x0, spi_miso_i=0x0
+UVM_INFO spi_scoreboard.sv(13) @ 125000: uvm_test_top.env.sb [spi_scoreboard] Scoreboard captured item #13: [SPI_ITEM] spi_clk_o=0x0, spi_cs_n_o=0x0, spi_mosi_o=0x0, spi_miso_i=0x0
+UVM_INFO spi_scoreboard.sv(13) @ 135000: uvm_test_top.env.sb [spi_scoreboard] Scoreboard captured item #14: [SPI_ITEM] spi_clk_o=0x0, spi_cs_n_o=0x0, spi_mosi_o=0x0, spi_miso_i=0x0
+UVM_INFO spi_scoreboard.sv(13) @ 145000: uvm_test_top.env.sb [spi_scoreboard] Scoreboard captured item #15: [SPI_ITEM] spi_clk_o=0x0, spi_cs_n_o=0x0, spi_mosi_o=0x0, spi_miso_i=0x0
+UVM_INFO spi_test.sv(25) @ 155000: uvm_test_top [spi_test] =========================================================
+UVM_INFO spi_test.sv(26) @ 155000: uvm_test_top [spi_test] === SPI UVM Verification Completed Successfully ===
+UVM_INFO spi_test.sv(27) @ 155000: uvm_test_top [spi_test] =========================================================
+UVM_INFO spi_scoreboard.sv(13) @ 155000: uvm_test_top.env.sb [spi_scoreboard] Scoreboard captured item #16: [SPI_ITEM] spi_clk_o=0x0, spi_cs_n_o=0x0, spi_mosi_o=0x0, spi_miso_i=0x0
+UVM_INFO /home/student/snps_tools_target/vcs/U-2023.03/etc/uvm/base/uvm_objection.svh(1274) @ 155000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO spi_scoreboard.sv(18) @ 155000: uvm_test_top.env.sb [spi_scoreboard] Scoreboard verification summary: 16 items checked
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   27
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[spi_random_seq]     1
+[spi_scoreboard]    17
+[spi_test]     7
+$finish called from file "/home/student/snps_tools_target/vcs/U-2023.03/etc/uvm/base/uvm_root.svh", line 437.
+$finish at simulation time               155000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 155000 ps
+CPU Time:      0.140 seconds;       Data structure size:   0.2Mb
+Sat Nov  7 11:50:12 2026

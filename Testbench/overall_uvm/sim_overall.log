@@ -1,0 +1,185 @@
+Command: /home/student/Documents/Taher_152/Soc_Project/Testbench/overall_uvm/./simv +UVM_VERBOSITY=UVM_MEDIUM -l sim.log
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version U-2023.03_Full64; Runtime version U-2023.03_Full64;  Nov  7 15:10 2026
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+Addressing configuration for axi_interconnect instance tb_top_veer_soc.u_dut.u_interconnect.axi_interconnect_inst
+ 0 ( 0): 00000000 / 24 -- 00000000-00ffffff
+ 1 ( 0): 01000000 / 24 -- 01000000-01ffffff
+ 2 ( 0): 02000000 / 24 -- 02000000-02ffffff
+ 3 ( 0): 03000000 / 24 -- 03000000-03ffffff
+ 4 ( 0): 04000000 / 24 -- 04000000-04ffffff
+ 5 ( 0): 05000000 / 24 -- 05000000-05ffffff
+UVM_INFO @ 0: reporter [RNTST] Running test soc_overall_test...
+UVM_INFO tests/soc_overall_test.sv(31) @ 0: uvm_test_top [soc_overall_test] =================================================================
+UVM_INFO tests/soc_overall_test.sv(32) @ 0: uvm_test_top [soc_overall_test] === STARTING VEER EL2 SOC OVERALL UVM VERIFICATION RUN ===
+UVM_INFO tests/soc_overall_test.sv(33) @ 0: uvm_test_top [soc_overall_test] === Integrating SPI, I2C, and UART Verification IPs (VIPs)  ===
+UVM_INFO tests/soc_overall_test.sv(34) @ 0: uvm_test_top [soc_overall_test] =================================================================
+UVM_INFO sequences/soc_virtual_sequence.sv(125) @ 0: uvm_test_top.env.v_seqr@@v_seq [soc_full_integration_seq] =================================================================
+UVM_INFO sequences/soc_virtual_sequence.sv(126) @ 0: uvm_test_top.env.v_seqr@@v_seq [soc_full_integration_seq] === Starting Full SoC Integrated Verification Sequence        ===
+UVM_INFO sequences/soc_virtual_sequence.sv(127) @ 0: uvm_test_top.env.v_seqr@@v_seq [soc_full_integration_seq] =================================================================
+UVM_INFO sequences/soc_virtual_sequence.sv(26) @ 0: uvm_test_top.env.v_seqr@@indep_seq [soc_independent_traffic_seq] =================================================================
+UVM_INFO sequences/soc_virtual_sequence.sv(27) @ 0: uvm_test_top.env.v_seqr@@indep_seq [soc_independent_traffic_seq] === Phase 1: Sequential Independent Peripheral Traffic Test   ===
+UVM_INFO sequences/soc_virtual_sequence.sv(28) @ 0: uvm_test_top.env.v_seqr@@indep_seq [soc_independent_traffic_seq] =================================================================
+UVM_INFO sequences/soc_virtual_sequence.sv(32) @ 0: uvm_test_top.env.v_seqr@@indep_seq [soc_independent_traffic_seq] >>> Running Independent SPI Sequence <<<
+UVM_INFO ../SPI/spi_sequence.sv(25) @ 0: uvm_test_top.env.spi_agnt.seqr@@spi_seq [spi_random_seq] Executing SPI random sequence (5 items)
+[0] INFO – Loading firmware into IFU boot ROM: firmware.hex
+[40000] INFO – Hardware Reset deasserted
+UVM_INFO sequences/soc_virtual_sequence.sv(42) @ 145000: uvm_test_top.env.v_seqr@@indep_seq [soc_independent_traffic_seq] >>> Running Independent I2C Sequence <<<
+UVM_INFO ../I2C/i2c_sequence.sv(25) @ 145000: uvm_test_top.env.i2c_agnt.seqr@@i2c_seq [i2c_random_seq] Executing I2C random sequence (10 items)
+UVM_INFO sequences/soc_virtual_sequence.sv(52) @ 345000: uvm_test_top.env.v_seqr@@indep_seq [soc_independent_traffic_seq] >>> Running Independent UART Sequence <<<
+UVM_INFO ../UART/uart_sequence.sv(25) @ 345000: uvm_test_top.env.uart_agnt.seqr@@uart_seq [uart_random_seq] Executing UART random sequence (9 items)
+UVM_INFO sequences/soc_virtual_sequence.sv(58) @ 435000: uvm_test_top.env.v_seqr@@indep_seq [soc_independent_traffic_seq] === Completed Sequential Independent Traffic Test ===
+UVM_INFO sequences/soc_virtual_sequence.sv(77) @ 635000: uvm_test_top.env.v_seqr@@concur_seq [soc_concurrent_traffic_seq] =================================================================
+UVM_INFO sequences/soc_virtual_sequence.sv(78) @ 635000: uvm_test_top.env.v_seqr@@concur_seq [soc_concurrent_traffic_seq] === Phase 2: Simultaneous Concurrent Multi-Peripheral Traffic ===
+UVM_INFO sequences/soc_virtual_sequence.sv(79) @ 635000: uvm_test_top.env.v_seqr@@concur_seq [soc_concurrent_traffic_seq] =================================================================
+UVM_INFO ../SPI/spi_sequence.sv(25) @ 635000: uvm_test_top.env.spi_agnt.seqr@@spi_seq [spi_random_seq] Executing SPI random sequence (11 items)
+UVM_INFO ../I2C/i2c_sequence.sv(25) @ 635000: uvm_test_top.env.i2c_agnt.seqr@@i2c_seq [i2c_random_seq] Executing I2C random sequence (10 items)
+UVM_INFO ../UART/uart_sequence.sv(25) @ 635000: uvm_test_top.env.uart_agnt.seqr@@uart_seq [uart_random_seq] Executing UART random sequence (5 items)
+UVM_INFO sequences/soc_virtual_sequence.sv(107) @ 745000: uvm_test_top.env.v_seqr@@concur_seq [soc_concurrent_traffic_seq] === Completed Simultaneous Concurrent Multi-Peripheral Traffic ===
+UVM_INFO sequences/soc_virtual_sequence.sv(139) @ 745000: uvm_test_top.env.v_seqr@@v_seq [soc_full_integration_seq] =================================================================
+UVM_INFO sequences/soc_virtual_sequence.sv(140) @ 745000: uvm_test_top.env.v_seqr@@v_seq [soc_full_integration_seq] === Completed Full SoC Integrated Verification Sequence        ===
+UVM_INFO sequences/soc_virtual_sequence.sv(141) @ 745000: uvm_test_top.env.v_seqr@@v_seq [soc_full_integration_seq] =================================================================
+UVM_INFO env/soc_scoreboard.sv(247) @ 8365000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x01 <<<
+UVM_INFO env/soc_scoreboard.sv(247) @ 11175000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x02 <<<
+UVM_INFO env/soc_scoreboard.sv(247) @ 12275000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x03 <<<
+UVM_INFO env/soc_scoreboard.sv(247) @ 13935000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x04 <<<
+UVM_INFO env/soc_scoreboard.sv(247) @ 15015000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x05 <<<
+UVM_INFO env/soc_scoreboard.sv(247) @ 17005000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x06 <<<
+UVM_INFO env/soc_scoreboard.sv(247) @ 20305000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x07 <<<
+UVM_INFO env/soc_scoreboard.sv(247) @ 20885000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x08 <<<
+UVM_INFO env/soc_scoreboard.sv(247) @ 27615000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x09 <<<
+UVM_INFO env/soc_scoreboard.sv(247) @ 28395000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x0a <<<
+UVM_INFO env/soc_scoreboard.sv(247) @ 32045000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x0b <<<
+UVM_INFO env/soc_scoreboard.sv(247) @ 36585000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x0c <<<
+UVM_INFO env/soc_scoreboard.sv(247) @ 41095000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x0d <<<
+UVM_INFO env/soc_scoreboard.sv(247) @ 45605000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x0e <<<
+UVM_INFO env/soc_scoreboard.sv(247) @ 49345000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x0f <<<
+UVM_INFO env/soc_scoreboard.sv(212) @ 50965000: uvm_test_top.env.sb [soc_scoreboard] DMA Abort requested
+UVM_INFO env/soc_scoreboard.sv(247) @ 54565000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x10 <<<
+UVM_INFO env/soc_scoreboard.sv(207) @ 72275000: uvm_test_top.env.sb [soc_scoreboard] DMA Triggered (#1): SRC=0x00000000, DST=0x40001068, BYTES=8, CFG=0x5
+UVM_INFO env/soc_scoreboard.sv(212) @ 103755000: uvm_test_top.env.sb [soc_scoreboard] DMA Abort requested
+UVM_INFO env/soc_scoreboard.sv(207) @ 108115000: uvm_test_top.env.sb [soc_scoreboard] DMA Triggered (#2): SRC=0x4000106c, DST=0x00000010, BYTES=8, CFG=0x6
+UVM_INFO env/soc_scoreboard.sv(212) @ 115185000: uvm_test_top.env.sb [soc_scoreboard] DMA Abort requested
+UVM_INFO env/soc_scoreboard.sv(247) @ 118545000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x11 <<<
+UVM_INFO env/soc_scoreboard.sv(207) @ 119365000: uvm_test_top.env.sb [soc_scoreboard] DMA Triggered (#3): SRC=0x00000000, DST=0x40001068, BYTES=8, CFG=0x5
+UVM_INFO env/soc_scoreboard.sv(212) @ 126875000: uvm_test_top.env.sb [soc_scoreboard] DMA Abort requested
+UVM_INFO env/soc_scoreboard.sv(247) @ 130235000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x12 <<<
+UVM_INFO env/soc_scoreboard.sv(207) @ 138095000: uvm_test_top.env.sb [soc_scoreboard] DMA Triggered (#4): SRC=0x4000300c, DST=0x00000030, BYTES=1, CFG=0x6
+UVM_INFO env/soc_scoreboard.sv(212) @ 145485000: uvm_test_top.env.sb [soc_scoreboard] DMA Abort requested
+UVM_INFO env/soc_scoreboard.sv(247) @ 148795000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x13 <<<
+UVM_INFO env/soc_scoreboard.sv(207) @ 151985000: uvm_test_top.env.sb [soc_scoreboard] DMA Triggered (#5): SRC=0x00000200, DST=0x4000300c, BYTES=8, CFG=0x5
+UVM_INFO env/soc_scoreboard.sv(212) @ 159075000: uvm_test_top.env.sb [soc_scoreboard] DMA Abort requested
+UVM_INFO env/soc_scoreboard.sv(247) @ 162315000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x14 <<<
+UVM_INFO env/soc_scoreboard.sv(207) @ 162795000: uvm_test_top.env.sb [soc_scoreboard] DMA Triggered (#6): SRC=0x00000000, DST=0x00000040, BYTES=8, CFG=0x4
+UVM_INFO env/soc_scoreboard.sv(212) @ 169695000: uvm_test_top.env.sb [soc_scoreboard] DMA Abort requested
+UVM_INFO env/soc_scoreboard.sv(247) @ 172935000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x15 <<<
+UVM_INFO env/soc_scoreboard.sv(207) @ 173475000: uvm_test_top.env.sb [soc_scoreboard] DMA Triggered (#7): SRC=0x00000000, DST=0x00000040, BYTES=8, CFG=0x4
+UVM_INFO ../UART/uart_driver.sv(42) @ 181605000: uvm_test_top.env.uart_agnt.drv [uart_driver] UART Driver serializing byte 0x52 ('R') onto uart_rx_i
+UVM_INFO env/soc_scoreboard.sv(212) @ 187425000: uvm_test_top.env.sb [soc_scoreboard] DMA Abort requested
+UVM_INFO env/soc_scoreboard.sv(247) @ 190665000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x16 <<<
+UVM_INFO env/soc_scoreboard.sv(212) @ 190895000: uvm_test_top.env.sb [soc_scoreboard] DMA Abort requested
+UVM_INFO env/soc_scoreboard.sv(212) @ 192835000: uvm_test_top.env.sb [soc_scoreboard] DMA Abort requested
+UVM_INFO env/soc_scoreboard.sv(247) @ 196075000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x17 <<<
+UVM_INFO env/soc_scoreboard.sv(247) @ 196405000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x18 <<<
+UVM_INFO env/soc_scoreboard.sv(247) @ 196865000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x19 <<<
+UVM_INFO ../UART/uart_driver.sv(81) @ 268405000: uvm_test_top.env.uart_agnt.drv [uart_driver] UART Driver: Successfully injected command 'R' (0x52) for TC_UART_02
+UVM_INFO env/soc_scoreboard.sv(247) @ 269375000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x1a <<<
+UVM_INFO env/soc_scoreboard.sv(207) @ 270375000: uvm_test_top.env.sb [soc_scoreboard] DMA Triggered (#8): SRC=0x00000000, DST=0x00000040, BYTES=8, CFG=0x4
+UVM_INFO env/soc_scoreboard.sv(212) @ 290145000: uvm_test_top.env.sb [soc_scoreboard] DMA Abort requested
+UVM_INFO env/soc_scoreboard.sv(247) @ 293385000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x1b <<<
+UVM_INFO env/soc_scoreboard.sv(207) @ 304985000: uvm_test_top.env.sb [soc_scoreboard] DMA Triggered (#9): SRC=0x00000000, DST=0x40001068, BYTES=8, CFG=0x5
+UVM_INFO env/soc_scoreboard.sv(212) @ 352495000: uvm_test_top.env.sb [soc_scoreboard] DMA Abort requested
+UVM_INFO env/soc_scoreboard.sv(207) @ 356735000: uvm_test_top.env.sb [soc_scoreboard] DMA Triggered (#10): SRC=0x4000106c, DST=0x00000010, BYTES=8, CFG=0x6
+UVM_INFO env/soc_scoreboard.sv(212) @ 363855000: uvm_test_top.env.sb [soc_scoreboard] DMA Abort requested
+UVM_INFO env/soc_scoreboard.sv(247) @ 367555000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x1c <<<
+UVM_INFO env/soc_scoreboard.sv(207) @ 376775000: uvm_test_top.env.sb [soc_scoreboard] DMA Triggered (#11): SRC=0x4000300c, DST=0x00000030, BYTES=1, CFG=0x6
+UVM_INFO env/soc_scoreboard.sv(212) @ 383945000: uvm_test_top.env.sb [soc_scoreboard] DMA Abort requested
+UVM_INFO env/soc_scoreboard.sv(247) @ 387645000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x1d <<<
+UVM_INFO env/soc_scoreboard.sv(247) @ 388885000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0xaa <<<
+UVM_INFO tests/soc_overall_test.sv(55) @ 388885000: uvm_test_top [soc_overall_test] =================================================================
+UVM_INFO tests/soc_overall_test.sv(56) @ 388885000: uvm_test_top [soc_overall_test] >>> ALL 30 SOC DIRECTED TESTS EXECUTED AND PASSED IN FIRMWARE <<<
+UVM_INFO tests/soc_overall_test.sv(57) @ 388885000: uvm_test_top [soc_overall_test] =================================================================
+UVM_INFO tests/soc_overall_test.sv(60) @ 388885000: uvm_test_top [soc_overall_test] =================================================================
+UVM_INFO tests/soc_overall_test.sv(61) @ 388885000: uvm_test_top [soc_overall_test] === VEER EL2 SOC OVERALL UVM VERIFICATION COMPLETED CLEANLY ===
+UVM_INFO tests/soc_overall_test.sv(62) @ 388885000: uvm_test_top [soc_overall_test] =================================================================
+UVM_INFO /home/student/snps_tools_target/vcs/U-2023.03/etc/uvm/base/uvm_objection.svh(1274) @ 388885000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO env/soc_coverage.sv(220) @ 388885000: uvm_test_top.env.cov [soc_coverage] =================================================================
+UVM_INFO env/soc_coverage.sv(221) @ 388885000: uvm_test_top.env.cov [soc_coverage]               SOC FUNCTIONAL COVERAGE SUMMARY REPORT             
+UVM_INFO env/soc_coverage.sv(222) @ 388885000: uvm_test_top.env.cov [soc_coverage] =================================================================
+UVM_INFO env/soc_coverage.sv(223) @ 388885000: uvm_test_top.env.cov [soc_coverage]   SPI Protocol Coverage:              100.00 %
+UVM_INFO env/soc_coverage.sv(224) @ 388885000: uvm_test_top.env.cov [soc_coverage]   I2C Protocol Coverage:              100.00 %
+UVM_INFO env/soc_coverage.sv(225) @ 388885000: uvm_test_top.env.cov [soc_coverage]   UART Protocol Coverage:             80.00 %
+UVM_INFO env/soc_coverage.sv(226) @ 388885000: uvm_test_top.env.cov [soc_coverage]   DMA Subsystem Coverage:             100.00 %
+UVM_INFO env/soc_coverage.sv(227) @ 388885000: uvm_test_top.env.cov [soc_coverage]   Concurrent Protocol Cross-Coverage: 93.75 %
+UVM_INFO env/soc_coverage.sv(228) @ 388885000: uvm_test_top.env.cov [soc_coverage]   AHB Subsystem Bus Coverage:         87.50 %
+UVM_INFO env/soc_coverage.sv(229) @ 388885000: uvm_test_top.env.cov [soc_coverage] =================================================================
+UVM_INFO env/soc_scoreboard.sv(267) @ 388885000: uvm_test_top.env.sb [soc_scoreboard] =================================================================
+UVM_INFO env/soc_scoreboard.sv(268) @ 388885000: uvm_test_top.env.sb [soc_scoreboard]            SOC OVERALL UVM SCOREBOARD VERIFICATION REPORT         
+UVM_INFO env/soc_scoreboard.sv(269) @ 388885000: uvm_test_top.env.sb [soc_scoreboard] =================================================================
+UVM_INFO env/soc_scoreboard.sv(270) @ 388885000: uvm_test_top.env.sb [soc_scoreboard]   Total Monitored SPI Transactions:   38889 (Passed: 38889)
+UVM_INFO env/soc_scoreboard.sv(271) @ 388885000: uvm_test_top.env.sb [soc_scoreboard]   Total Monitored I2C Transactions:   38889 (Passed: 38889 | STARTs: 11, STOPs: 11)
+UVM_INFO env/soc_scoreboard.sv(272) @ 388885000: uvm_test_top.env.sb [soc_scoreboard]   Total Monitored UART Transactions:  38889 (Passed: 38889)
+UVM_INFO env/soc_scoreboard.sv(273) @ 388885000: uvm_test_top.env.sb [soc_scoreboard]   Total Monitored AHB Transactions:   1744 (Passed: 1744)
+UVM_INFO env/soc_scoreboard.sv(274) @ 388885000: uvm_test_top.env.sb [soc_scoreboard]   DMA Hardware Checks Passed:         150
+UVM_INFO env/soc_scoreboard.sv(275) @ 388885000: uvm_test_top.env.sb [soc_scoreboard]   DMA Configured Transfers:           11
+UVM_INFO env/soc_scoreboard.sv(276) @ 388885000: uvm_test_top.env.sb [soc_scoreboard] -----------------------------------------------------------------
+UVM_INFO env/soc_scoreboard.sv(277) @ 388885000: uvm_test_top.env.sb [soc_scoreboard]   Highest Milestone Achieved:         0xaa
+UVM_INFO env/soc_scoreboard.sv(278) @ 388885000: uvm_test_top.env.sb [soc_scoreboard]   Data Mismatches:                    0
+UVM_INFO env/soc_scoreboard.sv(279) @ 388885000: uvm_test_top.env.sb [soc_scoreboard]   Protocol Violations / Errors:       0
+UVM_INFO env/soc_scoreboard.sv(280) @ 388885000: uvm_test_top.env.sb [soc_scoreboard]   Total Scoreboard Errors:            0
+UVM_INFO env/soc_scoreboard.sv(281) @ 388885000: uvm_test_top.env.sb [soc_scoreboard] -----------------------------------------------------------------
+UVM_INFO env/soc_scoreboard.sv(282) @ 388885000: uvm_test_top.env.sb [soc_scoreboard]   AHB Subsystem Activation Correlation:
+UVM_INFO env/soc_scoreboard.sv(283) @ 388885000: uvm_test_top.env.sb [soc_scoreboard]     - SPI Subsystem Accessed:         YES
+UVM_INFO env/soc_scoreboard.sv(284) @ 388885000: uvm_test_top.env.sb [soc_scoreboard]     - UART Subsystem Accessed:        YES
+UVM_INFO env/soc_scoreboard.sv(285) @ 388885000: uvm_test_top.env.sb [soc_scoreboard]     - I2C Subsystem Accessed:         YES
+UVM_INFO env/soc_scoreboard.sv(286) @ 388885000: uvm_test_top.env.sb [soc_scoreboard]     - DMA Subsystem Accessed:         YES
+UVM_INFO env/soc_scoreboard.sv(287) @ 388885000: uvm_test_top.env.sb [soc_scoreboard] =================================================================
+UVM_INFO env/soc_scoreboard.sv(290) @ 388885000: uvm_test_top.env.sb [soc_scoreboard]   >>> SCOREBOARD STATUS: ALL CHECKS PASSED (0 ERRORS) <<<
+UVM_INFO env/soc_scoreboard.sv(294) @ 388885000: uvm_test_top.env.sb [soc_scoreboard] =================================================================
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  125
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[i2c_random_seq]     2
+[soc_concurrent_traffic_seq]     4
+[soc_coverage]    10
+[soc_full_integration_seq]     6
+[soc_independent_traffic_seq]     7
+[soc_overall_test]    10
+[soc_scoreboard]    78
+[spi_random_seq]     2
+[uart_driver]     2
+[uart_random_seq]     2
+$finish called from file "/home/student/snps_tools_target/vcs/U-2023.03/etc/uvm/base/uvm_root.svh", line 437.
+$finish at simulation time            388885000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 388885000 ps
+CPU Time:      1.530 seconds;       Data structure size:   1.1Mb
+Sat Nov  7 15:10:43 2026

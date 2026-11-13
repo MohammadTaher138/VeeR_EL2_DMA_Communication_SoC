@@ -1,0 +1,127 @@
+Command: /home/student/Documents/Taher_152/Soc_Project/Testbench/overall_uvm/./simv +UVM_TESTNAME=soc_i2c_test +UVM_VERBOSITY=UVM_LOW -l logs/soc_i2c_test.log
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version U-2023.03_Full64; Runtime version U-2023.03_Full64;  Nov  7 16:10 2026
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+Addressing configuration for axi_interconnect instance tb_top_veer_soc.u_dut.u_interconnect.axi_interconnect_inst
+ 0 ( 0): 00000000 / 24 -- 00000000-00ffffff
+ 1 ( 0): 01000000 / 24 -- 01000000-01ffffff
+ 2 ( 0): 02000000 / 24 -- 02000000-02ffffff
+ 3 ( 0): 03000000 / 24 -- 03000000-03ffffff
+ 4 ( 0): 04000000 / 24 -- 04000000-04ffffff
+ 5 ( 0): 05000000 / 24 -- 05000000-05ffffff
+UVM_INFO @ 0: reporter [RNTST] Running test soc_i2c_test...
+UVM_INFO tests/soc_i2c_test.sv(32) @ 0: uvm_test_top [soc_i2c_test] =================================================================
+UVM_INFO tests/soc_i2c_test.sv(33) @ 0: uvm_test_top [soc_i2c_test] === STARTING VEER EL2 SOC I2C PERIPHERAL TEST                 ===
+UVM_INFO tests/soc_i2c_test.sv(34) @ 0: uvm_test_top [soc_i2c_test] === Verifying I2C START/STOP, Slave Write, Read (0x5A) & NACK ===
+UVM_INFO tests/soc_i2c_test.sv(35) @ 0: uvm_test_top [soc_i2c_test] =================================================================
+[0] INFO – Loading firmware into IFU boot ROM: firmware.hex
+[40000] INFO – Hardware Reset deasserted
+UVM_INFO env/soc_scoreboard.sv(434) @ 8365000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x01 <<<
+UVM_INFO env/soc_scoreboard.sv(434) @ 11175000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x02 <<<
+UVM_INFO env/soc_scoreboard.sv(434) @ 12275000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x03 <<<
+UVM_INFO env/soc_scoreboard.sv(434) @ 13935000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x04 <<<
+UVM_INFO env/soc_scoreboard.sv(434) @ 15015000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x05 <<<
+UVM_INFO env/soc_scoreboard.sv(434) @ 17005000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x06 <<<
+UVM_INFO env/soc_scoreboard.sv(434) @ 20305000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x07 <<<
+UVM_INFO env/soc_scoreboard.sv(434) @ 20885000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x08 <<<
+UVM_INFO env/soc_scoreboard.sv(434) @ 27615000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x09 <<<
+UVM_INFO env/soc_scoreboard.sv(434) @ 28395000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x0a <<<
+UVM_INFO env/soc_scoreboard.sv(434) @ 32045000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x0b <<<
+UVM_INFO env/soc_scoreboard.sv(434) @ 36585000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x0c <<<
+UVM_INFO env/soc_scoreboard.sv(434) @ 41095000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x0d <<<
+UVM_INFO env/soc_scoreboard.sv(434) @ 45605000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x0e <<<
+UVM_INFO env/soc_scoreboard.sv(434) @ 49345000: uvm_test_top.env.sb [soc_scoreboard] >>> Scoreboard captured Firmware Milestone: 0x0f <<<
+UVM_INFO tests/soc_i2c_test.sv(53) @ 49345000: uvm_test_top [soc_i2c_test] =================================================================
+UVM_INFO tests/soc_i2c_test.sv(54) @ 49345000: uvm_test_top [soc_i2c_test] >>> I2C TESTS PASSED (Milestone 0x0f achieved) <<<
+UVM_INFO tests/soc_i2c_test.sv(55) @ 49345000: uvm_test_top [soc_i2c_test] =================================================================
+UVM_INFO /home/student/snps_tools_target/vcs/U-2023.03/etc/uvm/base/uvm_objection.svh(1274) @ 49345000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO env/soc_coverage.sv(383) @ 49345000: uvm_test_top.env.cov [soc_coverage] =================================================================
+UVM_INFO env/soc_coverage.sv(384) @ 49345000: uvm_test_top.env.cov [soc_coverage]               SOC FUNCTIONAL COVERAGE SUMMARY REPORT             
+UVM_INFO env/soc_coverage.sv(385) @ 49345000: uvm_test_top.env.cov [soc_coverage] =================================================================
+UVM_INFO env/soc_coverage.sv(386) @ 49345000: uvm_test_top.env.cov [soc_coverage]   SPI Protocol & Modes Coverage:      82.14 %
+UVM_INFO env/soc_coverage.sv(387) @ 49345000: uvm_test_top.env.cov [soc_coverage]   I2C Protocol & Trans Coverage:      90.00 %
+UVM_INFO env/soc_coverage.sv(388) @ 49345000: uvm_test_top.env.cov [soc_coverage]   UART Protocol & Control Coverage:   45.00 %
+UVM_INFO env/soc_coverage.sv(389) @ 49345000: uvm_test_top.env.cov [soc_coverage]   DMA Subsystem CSR Coverage:         58.33 %
+UVM_INFO env/soc_coverage.sv(390) @ 49345000: uvm_test_top.env.cov [soc_coverage]   DMA Functional Transfers Coverage:  0.00 %
+UVM_INFO env/soc_coverage.sv(391) @ 49345000: uvm_test_top.env.cov [soc_coverage]   CPU-DMA Bus Contention Coverage:    0.00 %
+UVM_INFO env/soc_coverage.sv(392) @ 49345000: uvm_test_top.env.cov [soc_coverage]   PIC Interrupt Routing Coverage:     50.00 %
+UVM_INFO env/soc_coverage.sv(393) @ 49345000: uvm_test_top.env.cov [soc_coverage]   Concurrent Protocol Cross-Coverage: 71.88 %
+UVM_INFO env/soc_coverage.sv(394) @ 49345000: uvm_test_top.env.cov [soc_coverage]   AHB Subsystem Bus Coverage:         90.00 %
+UVM_INFO env/soc_coverage.sv(395) @ 49345000: uvm_test_top.env.cov [soc_coverage] =================================================================
+UVM_INFO env/soc_scoreboard.sv(454) @ 49345000: uvm_test_top.env.sb [soc_scoreboard] =================================================================
+UVM_INFO env/soc_scoreboard.sv(455) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]            SOC OVERALL UVM SCOREBOARD VERIFICATION REPORT         
+UVM_INFO env/soc_scoreboard.sv(456) @ 49345000: uvm_test_top.env.sb [soc_scoreboard] =================================================================
+UVM_INFO env/soc_scoreboard.sv(457) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]   Total Monitored SPI Transactions:   4935 (Passed: 4935)
+UVM_INFO env/soc_scoreboard.sv(458) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]   Total Monitored I2C Transactions:   4935 (Passed: 4935 | STARTs: 6, STOPs: 6)
+UVM_INFO env/soc_scoreboard.sv(459) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]   Total Monitored UART Transactions:  4935 (Passed: 4935)
+UVM_INFO env/soc_scoreboard.sv(460) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]   Total Monitored AHB Transactions:   234 (Passed: 234)
+UVM_INFO env/soc_scoreboard.sv(461) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]   DMA Hardware Checks Passed:         0
+UVM_INFO env/soc_scoreboard.sv(462) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]   DMA Configured Transfers:           0
+UVM_INFO env/soc_scoreboard.sv(463) @ 49345000: uvm_test_top.env.sb [soc_scoreboard] -----------------------------------------------------------------
+UVM_INFO env/soc_scoreboard.sv(464) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]   Dedicated VeeR EL2 DMA Slave Port Verification:
+UVM_INFO env/soc_scoreboard.sv(465) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]     - DCCM DMA Reads Verified:        0 (Acks: 0)
+UVM_INFO env/soc_scoreboard.sv(466) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]     - DCCM DMA Writes Verified:       0 (Acks: 0)
+UVM_INFO env/soc_scoreboard.sv(467) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]     - 32-bit Address Alignment Checks:0 (All Passed)
+UVM_INFO env/soc_scoreboard.sv(468) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]     - Write Strobe Rule Checks:       0 (All Passed)
+UVM_INFO env/soc_scoreboard.sv(469) @ 49345000: uvm_test_top.env.sb [soc_scoreboard] -----------------------------------------------------------------
+UVM_INFO env/soc_scoreboard.sv(470) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]   PIC Interrupt Routing Verification:
+UVM_INFO env/soc_scoreboard.sv(471) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]     - PIC Routing Checks Passed:      0
+UVM_INFO env/soc_scoreboard.sv(472) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]     - DMA Done Pulses Routed (PIC #1): 0
+UVM_INFO env/soc_scoreboard.sv(473) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]     - DMA Error Pulses Routed (PIC #2):0
+UVM_INFO env/soc_scoreboard.sv(474) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]     - SPI IRQ Pulses Routed (PIC #3):  2
+UVM_INFO env/soc_scoreboard.sv(475) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]     - UART IRQ Pulses Routed (PIC #4): 0
+UVM_INFO env/soc_scoreboard.sv(476) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]     - I2C IRQ Pulses Routed (PIC #5):  2
+UVM_INFO env/soc_scoreboard.sv(477) @ 49345000: uvm_test_top.env.sb [soc_scoreboard] -----------------------------------------------------------------
+UVM_INFO env/soc_scoreboard.sv(478) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]   Highest Milestone Achieved:         0x0f
+UVM_INFO env/soc_scoreboard.sv(479) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]   Data Mismatches:                    0
+UVM_INFO env/soc_scoreboard.sv(480) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]   Protocol Violations / Errors:       0
+UVM_INFO env/soc_scoreboard.sv(481) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]   Total Scoreboard Errors:            0
+UVM_INFO env/soc_scoreboard.sv(482) @ 49345000: uvm_test_top.env.sb [soc_scoreboard] -----------------------------------------------------------------
+UVM_INFO env/soc_scoreboard.sv(483) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]   AHB Subsystem Activation Correlation:
+UVM_INFO env/soc_scoreboard.sv(484) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]     - SPI Subsystem Accessed:         YES
+UVM_INFO env/soc_scoreboard.sv(485) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]     - UART Subsystem Accessed:        YES
+UVM_INFO env/soc_scoreboard.sv(486) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]     - I2C Subsystem Accessed:         YES
+UVM_INFO env/soc_scoreboard.sv(487) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]     - DMA Subsystem Accessed:         YES
+UVM_INFO env/soc_scoreboard.sv(488) @ 49345000: uvm_test_top.env.sb [soc_scoreboard] =================================================================
+UVM_INFO env/soc_scoreboard.sv(491) @ 49345000: uvm_test_top.env.sb [soc_scoreboard]   >>> SCOREBOARD STATUS: ALL CHECKS PASSED (0 ERRORS) <<<
+UVM_INFO env/soc_scoreboard.sv(495) @ 49345000: uvm_test_top.env.sb [soc_scoreboard] =================================================================
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   74
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[soc_coverage]    13
+[soc_i2c_test]     7
+[soc_scoreboard]    52
+$finish called from file "/home/student/snps_tools_target/vcs/U-2023.03/etc/uvm/base/uvm_root.svh", line 437.
+$finish at simulation time             49345000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 49345000 ps
+CPU Time:      0.330 seconds;       Data structure size:   1.1Mb
+Sat Nov  7 16:10:09 2026

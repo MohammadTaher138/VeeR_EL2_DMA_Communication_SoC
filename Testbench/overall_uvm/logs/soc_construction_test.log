@@ -1,0 +1,129 @@
+Command: /home/student/Documents/Taher_152/Soc_Project/Testbench/overall_uvm/./simv +UVM_TESTNAME=soc_construction_test +UVM_VERBOSITY=UVM_LOW -l logs/soc_construction_test.log
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version U-2023.03_Full64; Runtime version U-2023.03_Full64;  Nov  7 16:10 2026
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+Addressing configuration for axi_interconnect instance tb_top_veer_soc.u_dut.u_interconnect.axi_interconnect_inst
+ 0 ( 0): 00000000 / 24 -- 00000000-00ffffff
+ 1 ( 0): 01000000 / 24 -- 01000000-01ffffff
+ 2 ( 0): 02000000 / 24 -- 02000000-02ffffff
+ 3 ( 0): 03000000 / 24 -- 03000000-03ffffff
+ 4 ( 0): 04000000 / 24 -- 04000000-04ffffff
+ 5 ( 0): 05000000 / 24 -- 05000000-05ffffff
+UVM_INFO @ 0: reporter [RNTST] Running test soc_construction_test...
+UVM_INFO tests/soc_construction_test.sv(26) @ 0: uvm_test_top [soc_construction_test] =================================================================
+UVM_INFO tests/soc_construction_test.sv(27) @ 0: uvm_test_top [soc_construction_test] === [CHECK 1/13] UVM Test Started: soc_construction_test      ===
+UVM_INFO tests/soc_construction_test.sv(28) @ 0: uvm_test_top [soc_construction_test] =================================================================
+UVM_INFO tests/soc_construction_test.sv(57) @ 0: uvm_test_top [soc_construction_test] =================================================================
+UVM_INFO tests/soc_construction_test.sv(58) @ 0: uvm_test_top [soc_construction_test] === [CONSTRUCTION TEST] Auditing UVM Topology & Components    ===
+UVM_INFO tests/soc_construction_test.sv(59) @ 0: uvm_test_top [soc_construction_test] =================================================================
+UVM_INFO tests/soc_construction_test.sv(62) @ 0: uvm_test_top [soc_construction_test] >>> [CHECK 2/13] Actual SoC DUT (top_veer_soc) instantiated in harness: VERIFIED
+UVM_INFO tests/soc_construction_test.sv(68) @ 0: uvm_test_top [soc_construction_test] >>> [CHECK 3/13] SoC Environment (soc_env) constructed: VERIFIED
+UVM_INFO tests/soc_construction_test.sv(75) @ 0: uvm_test_top [soc_construction_test] >>> [CHECK 4/13] SPI Agent (drv, mon, seqr) constructed: VERIFIED
+UVM_INFO tests/soc_construction_test.sv(82) @ 0: uvm_test_top [soc_construction_test] >>> [CHECK 5/13] I2C Agent (drv, mon, seqr) constructed: VERIFIED
+UVM_INFO tests/soc_construction_test.sv(89) @ 0: uvm_test_top [soc_construction_test] >>> [CHECK 6/13] UART Agent (drv, mon, seqr) constructed: VERIFIED
+UVM_INFO tests/soc_construction_test.sv(96) @ 0: uvm_test_top [soc_construction_test] >>> [CHECK 7/13] Passive AHB-Lite Monitor constructed: VERIFIED
+UVM_INFO tests/soc_construction_test.sv(103) @ 0: uvm_test_top [soc_construction_test] >>> [CHECK 8/13] Virtual Sequencer and handles (SPI, I2C, UART) constructed: VERIFIED
+UVM_INFO tests/soc_construction_test.sv(110) @ 0: uvm_test_top [soc_construction_test] >>> [CHECK 9/13] Configuration successfully distributed (SPI=UVM_ACTIVE, I2C=UVM_ACTIVE, UART=UVM_ACTIVE, AHB=UVM_PASSIVE): VERIFIED
+UVM_INFO tests/soc_construction_test.sv(124) @ 0: uvm_test_top [soc_construction_test] >>> [CHECK 10/13] All required virtual interfaces (SPI, I2C, UART, AHB) verified available: VERIFIED
+UVM_INFO tests/soc_construction_test.sv(130) @ 0: uvm_test_top [soc_construction_test] >>> [CHECK 11/13] Central Scoreboard (soc_scoreboard) constructed: VERIFIED
+UVM_INFO tests/soc_construction_test.sv(137) @ 0: uvm_test_top [soc_construction_test] >>> [CHECK 12/13] Functional Coverage Collector (soc_coverage) constructed: VERIFIED
+UVM_INFO tests/soc_construction_test.sv(140) @ 0: uvm_test_top [soc_construction_test] =================================================================
+UVM_INFO tests/soc_construction_test.sv(141) @ 0: uvm_test_top [soc_construction_test] === [CONSTRUCTION TEST] All 12 Structural Checks Passed!      ===
+UVM_INFO tests/soc_construction_test.sv(142) @ 0: uvm_test_top [soc_construction_test] =================================================================
+UVM_INFO tests/soc_construction_test.sv(148) @ 0: uvm_test_top [soc_construction_test] === [CONSTRUCTION TEST] run_phase active: NO stimulus sequences started ===
+[0] INFO – Loading firmware into IFU boot ROM: firmware.hex
+[40000] INFO – Hardware Reset deasserted
+UVM_INFO tests/soc_construction_test.sv(153) @ 200000: uvm_test_top [soc_construction_test] =================================================================
+UVM_INFO tests/soc_construction_test.sv(154) @ 200000: uvm_test_top [soc_construction_test] >>> [CHECK 13/13] UVM environment completes without fatal errors: VERIFIED
+UVM_INFO tests/soc_construction_test.sv(155) @ 200000: uvm_test_top [soc_construction_test] =================================================================
+UVM_INFO /home/student/snps_tools_target/vcs/U-2023.03/etc/uvm/base/uvm_objection.svh(1274) @ 200000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO env/soc_coverage.sv(383) @ 200000: uvm_test_top.env.cov [soc_coverage] =================================================================
+UVM_INFO env/soc_coverage.sv(384) @ 200000: uvm_test_top.env.cov [soc_coverage]               SOC FUNCTIONAL COVERAGE SUMMARY REPORT             
+UVM_INFO env/soc_coverage.sv(385) @ 200000: uvm_test_top.env.cov [soc_coverage] =================================================================
+UVM_INFO env/soc_coverage.sv(386) @ 200000: uvm_test_top.env.cov [soc_coverage]   SPI Protocol & Modes Coverage:      42.86 %
+UVM_INFO env/soc_coverage.sv(387) @ 200000: uvm_test_top.env.cov [soc_coverage]   I2C Protocol & Trans Coverage:      45.00 %
+UVM_INFO env/soc_coverage.sv(388) @ 200000: uvm_test_top.env.cov [soc_coverage]   UART Protocol & Control Coverage:   45.00 %
+UVM_INFO env/soc_coverage.sv(389) @ 200000: uvm_test_top.env.cov [soc_coverage]   DMA Subsystem CSR Coverage:         0.00 %
+UVM_INFO env/soc_coverage.sv(390) @ 200000: uvm_test_top.env.cov [soc_coverage]   DMA Functional Transfers Coverage:  0.00 %
+UVM_INFO env/soc_coverage.sv(391) @ 200000: uvm_test_top.env.cov [soc_coverage]   CPU-DMA Bus Contention Coverage:    0.00 %
+UVM_INFO env/soc_coverage.sv(392) @ 200000: uvm_test_top.env.cov [soc_coverage]   PIC Interrupt Routing Coverage:     0.00 %
+UVM_INFO env/soc_coverage.sv(393) @ 200000: uvm_test_top.env.cov [soc_coverage]   Concurrent Protocol Cross-Coverage: 40.62 %
+UVM_INFO env/soc_coverage.sv(394) @ 200000: uvm_test_top.env.cov [soc_coverage]   AHB Subsystem Bus Coverage:         0.00 %
+UVM_INFO env/soc_coverage.sv(395) @ 200000: uvm_test_top.env.cov [soc_coverage] =================================================================
+UVM_INFO env/soc_scoreboard.sv(454) @ 200000: uvm_test_top.env.sb [soc_scoreboard] =================================================================
+UVM_INFO env/soc_scoreboard.sv(455) @ 200000: uvm_test_top.env.sb [soc_scoreboard]            SOC OVERALL UVM SCOREBOARD VERIFICATION REPORT         
+UVM_INFO env/soc_scoreboard.sv(456) @ 200000: uvm_test_top.env.sb [soc_scoreboard] =================================================================
+UVM_INFO env/soc_scoreboard.sv(457) @ 200000: uvm_test_top.env.sb [soc_scoreboard]   Total Monitored SPI Transactions:   20 (Passed: 20)
+UVM_INFO env/soc_scoreboard.sv(458) @ 200000: uvm_test_top.env.sb [soc_scoreboard]   Total Monitored I2C Transactions:   20 (Passed: 20 | STARTs: 0, STOPs: 0)
+UVM_INFO env/soc_scoreboard.sv(459) @ 200000: uvm_test_top.env.sb [soc_scoreboard]   Total Monitored UART Transactions:  20 (Passed: 20)
+UVM_INFO env/soc_scoreboard.sv(460) @ 200000: uvm_test_top.env.sb [soc_scoreboard]   Total Monitored AHB Transactions:   0 (Passed: 0)
+UVM_INFO env/soc_scoreboard.sv(461) @ 200000: uvm_test_top.env.sb [soc_scoreboard]   DMA Hardware Checks Passed:         0
+UVM_INFO env/soc_scoreboard.sv(462) @ 200000: uvm_test_top.env.sb [soc_scoreboard]   DMA Configured Transfers:           0
+UVM_INFO env/soc_scoreboard.sv(463) @ 200000: uvm_test_top.env.sb [soc_scoreboard] -----------------------------------------------------------------
+UVM_INFO env/soc_scoreboard.sv(464) @ 200000: uvm_test_top.env.sb [soc_scoreboard]   Dedicated VeeR EL2 DMA Slave Port Verification:
+UVM_INFO env/soc_scoreboard.sv(465) @ 200000: uvm_test_top.env.sb [soc_scoreboard]     - DCCM DMA Reads Verified:        0 (Acks: 0)
+UVM_INFO env/soc_scoreboard.sv(466) @ 200000: uvm_test_top.env.sb [soc_scoreboard]     - DCCM DMA Writes Verified:       0 (Acks: 0)
+UVM_INFO env/soc_scoreboard.sv(467) @ 200000: uvm_test_top.env.sb [soc_scoreboard]     - 32-bit Address Alignment Checks:0 (All Passed)
+UVM_INFO env/soc_scoreboard.sv(468) @ 200000: uvm_test_top.env.sb [soc_scoreboard]     - Write Strobe Rule Checks:       0 (All Passed)
+UVM_INFO env/soc_scoreboard.sv(469) @ 200000: uvm_test_top.env.sb [soc_scoreboard] -----------------------------------------------------------------
+UVM_INFO env/soc_scoreboard.sv(470) @ 200000: uvm_test_top.env.sb [soc_scoreboard]   PIC Interrupt Routing Verification:
+UVM_INFO env/soc_scoreboard.sv(471) @ 200000: uvm_test_top.env.sb [soc_scoreboard]     - PIC Routing Checks Passed:      0
+UVM_INFO env/soc_scoreboard.sv(472) @ 200000: uvm_test_top.env.sb [soc_scoreboard]     - DMA Done Pulses Routed (PIC #1): 0
+UVM_INFO env/soc_scoreboard.sv(473) @ 200000: uvm_test_top.env.sb [soc_scoreboard]     - DMA Error Pulses Routed (PIC #2):0
+UVM_INFO env/soc_scoreboard.sv(474) @ 200000: uvm_test_top.env.sb [soc_scoreboard]     - SPI IRQ Pulses Routed (PIC #3):  1
+UVM_INFO env/soc_scoreboard.sv(475) @ 200000: uvm_test_top.env.sb [soc_scoreboard]     - UART IRQ Pulses Routed (PIC #4): 0
+UVM_INFO env/soc_scoreboard.sv(476) @ 200000: uvm_test_top.env.sb [soc_scoreboard]     - I2C IRQ Pulses Routed (PIC #5):  0
+UVM_INFO env/soc_scoreboard.sv(477) @ 200000: uvm_test_top.env.sb [soc_scoreboard] -----------------------------------------------------------------
+UVM_INFO env/soc_scoreboard.sv(478) @ 200000: uvm_test_top.env.sb [soc_scoreboard]   Highest Milestone Achieved:         0x00
+UVM_INFO env/soc_scoreboard.sv(479) @ 200000: uvm_test_top.env.sb [soc_scoreboard]   Data Mismatches:                    0
+UVM_INFO env/soc_scoreboard.sv(480) @ 200000: uvm_test_top.env.sb [soc_scoreboard]   Protocol Violations / Errors:       0
+UVM_INFO env/soc_scoreboard.sv(481) @ 200000: uvm_test_top.env.sb [soc_scoreboard]   Total Scoreboard Errors:            0
+UVM_INFO env/soc_scoreboard.sv(482) @ 200000: uvm_test_top.env.sb [soc_scoreboard] -----------------------------------------------------------------
+UVM_INFO env/soc_scoreboard.sv(483) @ 200000: uvm_test_top.env.sb [soc_scoreboard]   AHB Subsystem Activation Correlation:
+UVM_INFO env/soc_scoreboard.sv(484) @ 200000: uvm_test_top.env.sb [soc_scoreboard]     - SPI Subsystem Accessed:          NO
+UVM_INFO env/soc_scoreboard.sv(485) @ 200000: uvm_test_top.env.sb [soc_scoreboard]     - UART Subsystem Accessed:         NO
+UVM_INFO env/soc_scoreboard.sv(486) @ 200000: uvm_test_top.env.sb [soc_scoreboard]     - I2C Subsystem Accessed:          NO
+UVM_INFO env/soc_scoreboard.sv(487) @ 200000: uvm_test_top.env.sb [soc_scoreboard]     - DMA Subsystem Accessed:          NO
+UVM_INFO env/soc_scoreboard.sv(488) @ 200000: uvm_test_top.env.sb [soc_scoreboard] =================================================================
+UVM_INFO env/soc_scoreboard.sv(491) @ 200000: uvm_test_top.env.sb [soc_scoreboard]   >>> SCOREBOARD STATUS: ALL CHECKS PASSED (0 ERRORS) <<<
+UVM_INFO env/soc_scoreboard.sv(495) @ 200000: uvm_test_top.env.sb [soc_scoreboard] =================================================================
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   76
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[soc_construction_test]    24
+[soc_coverage]    13
+[soc_scoreboard]    37
+$finish called from file "/home/student/snps_tools_target/vcs/U-2023.03/etc/uvm/base/uvm_root.svh", line 437.
+$finish at simulation time               200000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 200000 ps
+CPU Time:      0.150 seconds;       Data structure size:   1.1Mb
+Sat Nov  7 16:10:06 2026
